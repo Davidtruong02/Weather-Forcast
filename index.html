@@ -11,15 +11,27 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <main>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Enter A City">
-            <button id="search-btn">Search</button>
-        </div>
-        <div class="result-container" id="result-container">
-            
+    <main id="container" class="container">
+        <div class="row">
+            <div class="column">
+                <div id="search-area">
+                    <h1 class="h1">Search For A City:</h1>
+                    <form id="seach-city">
+                        <input type="text" name="city" id="city" placeholder="San Diego">
+                        <button type="submit" id="search-btn" class="btn">Search</button>
+                    </form>
+                    <div id="history"></div>
+                </div>
+            </div>
+            <div class="forecast">
+                <div id="five-day-forecast" class="row justify"></div>
+            </div>
         </div>
     </main>
-    <script src="assets/Java/script.js" defer></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="assets/Java/script.js"></script>
 </body>
 </html>
