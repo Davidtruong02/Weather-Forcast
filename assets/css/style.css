@@ -5,13 +5,35 @@
 }
 
 body {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#weather-container {
-    margin-top: 50px;
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-#loading {
-    display: none;
+#search-input{
+    width: 200px;
+    padding: 0.5rem;
 }
+
+#search-btn{
+    padding: 0.5rem 1rem;
+    background-color: aqua;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
