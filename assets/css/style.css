@@ -8,40 +8,69 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.heading{
+    font-weight: bold;
+    font-size: 56px;
+}
+
 header {
-    background-color: #4CAF50;
-    color: white;
     text-align: center;
-    padding: 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:slategrey;
 }
 
+.container {
+    width: 100%;
+}
 
-.search-container {
+.row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    flex-wrap: wrap;
 }
 
-#search-input{
-    width: 200px;
-    padding: 0.5rem;
+.column {
+    width: 20%;
+    margin: 0;
 }
 
-#search-btn{
-    padding: 0.5rem 1rem;
-    background-color: aqua;
+.forecast {
+    width: 65%;
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+
+.h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1.5rem;
+}
+
+#city {
+    font-size: 2rem;
+    width: 100%;
+    height: 80%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    padding-left: 10px;
+
+}
+
+#search-btn {
+    background-color: slategray;
+    margin-bottom: 5px;
+    margin-top: 15px;
     color: white;
+}
+
+.btn {
+    font-size: 20px;
+    width: 100%;
     border: none;
-    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 5px;
 }
-
-.result-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-}
-
