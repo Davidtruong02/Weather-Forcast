@@ -25,7 +25,7 @@ function getWeather(city) {
             var currentWeatherHTML = `
                 <h2>${cityName}</h2>
                 <p>Date: ${date.toLocaleDateString()}</p>
-                <p>Icon: <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon"></p>
+                <p><img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon"></p>
                 <p>Temperature: ${temperature} °C</p>
                 <p>Humidity: ${humidity}%</p>
                 <p>Wind Speed: ${windSpeed} m/s</p>
@@ -68,7 +68,7 @@ function getWeather(city) {
                 forecastHTML += `
                     <div>
                         <p>Date: ${date}</p>
-                        <p>Icon: <img src="https://openweathermap.org/img/w/${dayForecast.icon}.png" alt="Weather Icon"></p>
+                        <p> <img src="https://openweathermap.org/img/w/${dayForecast.icon}.png" alt="Weather Icon"></p>
                         <p>Temperature: ${dayForecast.temperature} °C</p>
                         <p>Humidity: ${dayForecast.humidity}%</p>
                         <p>Wind Speed: ${dayForecast.windSpeed} m/s</p>
