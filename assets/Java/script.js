@@ -8,8 +8,8 @@ var historyList = document.getElementById('search-history');
 var enteredCities = [];
 
 function getWeather(city) {
-    var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
 
     fetch(currentWeatherUrl)
         .then(response => response.json())
@@ -26,7 +26,7 @@ function getWeather(city) {
                 <h2>${cityName}</h2>
                 <p>Date: ${date.toLocaleDateString()}</p>
                 <p><img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon"></p>
-                <p>Temperature: ${temperature} °C</p>
+                <p>Temperature: ${temperature} °F</p>
                 <p>Humidity: ${humidity}%</p>
                 <p>Wind Speed: ${windSpeed} m/s</p>
             `;
@@ -69,7 +69,7 @@ function getWeather(city) {
                     <div>
                         <p>Date: ${date}</p>
                         <p> <img src="https://openweathermap.org/img/w/${dayForecast.icon}.png" alt="Weather Icon"></p>
-                        <p>Temperature: ${dayForecast.temperature} °C</p>
+                        <p>Temperature: ${dayForecast.temperature} °F</p>
                         <p>Humidity: ${dayForecast.humidity}%</p>
                         <p>Wind Speed: ${dayForecast.windSpeed} m/s</p>
                     </div>
