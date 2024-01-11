@@ -4,12 +4,15 @@ var searchForm = document.querySelector('.city-search');
 var weatherInfo = document.getElementById('current-weather');
 var forecastInfo = document.getElementById('forecast');
 var historyList = document.getElementById('search-history');
-
+var forecastContainer = document.getElementById('day-forecast');
 var enteredCities = [];
 
 function getWeather(city) {
     var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+    
+    // clear previous weather data
+    forecastContainer.innerHTML = '';
 
     fetch(currentWeatherUrl)
         .then(response => response.json())
@@ -25,7 +28,7 @@ function getWeather(city) {
             var currentWeatherHTML = `
                 <h2>${cityName}</h2>
                 <p>Date: ${date.toLocaleDateString()}</p>
-                <p><img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon"></p>
+                <p><img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon 1"></p>
                 <p>Temperature: ${temperature} °F</p>
                 <p>Humidity: ${humidity}%</p>
                 <p>Wind Speed: ${windSpeed} m/s</p>
@@ -40,7 +43,8 @@ function getWeather(city) {
     fetch(forecastUrl)
         .then(response => response.json())
         .then(data => {
-            var forecastHTML = '<h3>5-Day Forecast</h3>';
+            var forecastTitle = '<h2>5-Day Forecast</h2>';
+            var forecastHTML = '';
             var dailyForecast = {};
 
             data.list.forEach(forecast => {
@@ -66,7 +70,7 @@ function getWeather(city) {
                 var dayForecast = dailyForecast[date];
 
                 forecastHTML += `
-                    <div>
+                    <div class="forecast-item">
                         <p>Date: ${date}</p>
                         <p> <img src="https://openweathermap.org/img/w/${dayForecast.icon}.png" alt="Weather Icon"></p>
                         <p>Temperature: ${dayForecast.temperature} °F</p>
@@ -76,7 +80,7 @@ function getWeather(city) {
                 `;
             });
 
-            weatherInfo.innerHTML += forecastHTML;
+            forecastContainer.innerHTML += '<div>' + forecastTitle + '<div class="forecast-items">' + forecastHTML + '</div></div>';
         })
         .catch(error => {
             console.error('Error fetching 5-day forecast data:', error);

@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
-</head>
+  </head>
 
-<body class="body">
-    <header class="header">
-        <div>
-            <h1>Weather Dashboard</h1>
-        </div>
+  <body class="body">
+    <header id="header">
+      <div>
+        <h1>Weather Dashboard</h1>
+      </div>
     </header>
 
-    <form class="city-search">
-      <label for="city">Search For A City:</label>
-      <input type="text" id="city" name="city" placeholder="Enter City:">
-      <button type="submit">Search</button>
-    </form>
     <div class="weather-container" id="weather-container">
-      <div class="search-history " id="search-history"></div>
-      <div class="current-weather" id="current-weather"></div>
-      <div class="forecast" id="forecast"></div>
+      <div class="left-side" id="left-side">
+        <form class="city-search" id="row">
+          <label for="city">Search For A City:</label>
+
+          <input type="text" id="city" name="city" placeholder="Enter City:" />
+          <button type="submit">Search</button>
+        </form>
+        <div class="search-history" id="search-history"></div>
+        
+      </div>
+
+      <div class="right-side" id="right-side">
+        <div class="current-weather" id="current-weather"></div>
+        <div class="day-forecast" id="day-forecast"></div>
+      </div>
     </div>
-    
 
     <script src="./assets/Java/script.js"></script>
-</body>
+  </body>
 </html>
